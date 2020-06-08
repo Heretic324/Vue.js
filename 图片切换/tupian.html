@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>图片切换</title>
+    <link rel="stylesheet" href="./css/index.css"/>
+</head>
+<body>
+    <div id="mask">
+        <div class="center">
+            <img :src="imgArr[index]" alt="">
+            <a href="javascript:void(0)" @click="prev" class="left">
+                <img src="image/prev.png" alt="">
+            </a>
+            <a href="javascript:void(0)" @click="next" class="right">
+                <img src="image/next.png" alt="">
+            </a>
+        </div>
+    </div>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    
+</body>
+</html>
+
+
+<script>
+    var app = new Vue({
+        el: "#mask",
+        data:{
+            imgArr:[
+            "./image/00.jpg",
+            "./image/01.jpg",
+            "./image/02.jpg",
+            "./image/03.jpg",
+            "./image/04.jpg",
+            "./image/05.jpg",
+            "./image/06.jpg",
+            "./image/07.jpg",
+            "./image/08.jpg",
+            "./image/09.jpg",
+            "./image/10.jpg"
+            ],
+            index:0
+        },
+        methods: {
+        prev:function(){
+            this.index--;
+            },
+        next:function(){
+            this.index++;
+            }
+        },
+        })
+    
+</script>
